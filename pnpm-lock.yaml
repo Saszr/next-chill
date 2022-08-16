@@ -10,7 +10,6 @@ specifiers:
   '@types/node': 18.7.3
   '@types/react': 18.0.17
   '@types/react-dom': 18.0.6
-  '@types/react-table': ^7.7.12
   '@types/redux-logger': ^3.0.9
   '@typescript-eslint/eslint-plugin': ^5.33.0
   '@typescript-eslint/parser': ^5.33.0
@@ -28,8 +27,8 @@ specifiers:
   react-dom: 18.2.0
   react-hook-form: ^7.34.1
   react-icons: ^4.4.0
+  react-intersection-observer: ^9.4.0
   react-redux: ^8.0.2
-  react-table: ^7.8.0
   redux-logger: ^3.0.6
   redux-persist: ^6.0.0
   typescript: 4.7.4
@@ -48,8 +47,8 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-hook-form: 7.34.1_react@18.2.0
   react-icons: 4.4.0_react@18.2.0
+  react-intersection-observer: 9.4.0_react@18.2.0
   react-redux: 8.0.2_76am3hp3mjvgy3cckgdecixdi4
-  react-table: 7.8.0_react@18.2.0
   redux-logger: 3.0.6
   redux-persist: 6.0.0_react@18.2.0
   yup: 0.32.11
@@ -58,7 +57,6 @@ devDependencies:
   '@types/node': 18.7.3
   '@types/react': 18.0.17
   '@types/react-dom': 18.0.6
-  '@types/react-table': 7.7.12
   '@types/redux-logger': 3.0.9
   '@typescript-eslint/eslint-plugin': 5.33.0_yy5c4q6zhpajzhorvwhnwvctfe
   '@typescript-eslint/parser': 5.33.0_4rv7y5c6xz3vfxwhbrcxxi73bq
@@ -1490,12 +1488,6 @@ packages:
     resolution: {integrity: sha512-/5OFZgfIPSwy+YuIBP/FgJnQnsxhZhjjrnxudMddeblOouIodEQ75X14Rr4wGSG/bknL+Omy9iWlLo1u/9GzAA==}
     dependencies:
       '@types/react': 18.0.17
-
-  /@types/react-table/7.7.12:
-    resolution: {integrity: sha512-bRUent+NR/WwtDGwI/BqhZ8XnHghwHw0HUKeohzB5xN3K2qKWYE5w19e7GCuOkL1CXD9Gi1HFy7TIm2AvgWUHg==}
-    dependencies:
-      '@types/react': 18.0.17
-    dev: true
 
   /@types/react/18.0.17:
     resolution: {integrity: sha512-38ETy4tL+rn4uQQi7mB81G7V1g0u2ryquNmsVIOKUAEIDK+3CUjZ6rSRpdvS99dNBnkLFL83qfmtLacGOTIhwQ==}
@@ -3253,6 +3245,14 @@ packages:
       react: 18.2.0
     dev: false
 
+  /react-intersection-observer/9.4.0_react@18.2.0:
+    resolution: {integrity: sha512-v0403CmomOVlzhqFXlzOxg0ziLcVq8mfbP0AwAcEQWgZmR2OulOT79Ikznw4UlB3N+jlUYqLMe4SDHUOyp0t2A==}
+    peerDependencies:
+      react: ^15.0.0 || ^16.0.0 || ^17.0.0|| ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -3343,14 +3343,6 @@ packages:
       invariant: 2.2.4
       react: 18.2.0
       tslib: 2.4.0
-    dev: false
-
-  /react-table/7.8.0_react@18.2.0:
-    resolution: {integrity: sha512-hNaz4ygkZO4bESeFfnfOft73iBUj8K5oKi1EcSHPAibEydfsX2MyU6Z8KCr3mv3C9Kqqh71U+DhZkFvibbnPbA==}
-    peerDependencies:
-      react: ^16.8.3 || ^17.0.0-0 || ^18.0.0
-    dependencies:
-      react: 18.2.0
     dev: false
 
   /react/18.2.0:
