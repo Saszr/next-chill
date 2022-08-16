@@ -18,8 +18,6 @@ const handler: NextApiHandler = async (req, res) => {
       data: {
         id: user.id,
         username: user.username,
-        firstName: user.firstName,
-        lastName: user.lastName,
       },
     });
   }
