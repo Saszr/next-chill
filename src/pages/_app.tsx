@@ -11,7 +11,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <Chakra>
       <Provider store={rootStore}>
-        <PersistGate persistor={persistor}>
+        <PersistGate loading={null} persistor={persistor}>
           <Head>
             <meta
               name="viewport"

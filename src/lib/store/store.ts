@@ -1,8 +1,18 @@
 import { configureStore, combineReducers, ThunkAction, Action } from '@reduxjs/toolkit';
-import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist';
 import logger from 'redux-logger';
 import { setupListeners } from '@reduxjs/toolkit/dist/query/react';
+
+import storage from './storage';
 
 import { baseApi } from './api/base.service';
 import userService from './api/user.service';
@@ -25,7 +35,7 @@ const middlewareHandler = (getDefaultMiddleware: any) => {
   const middlewareList = [
     ...getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: ['persist/PERSIST'],
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
 
