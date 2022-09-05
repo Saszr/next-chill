@@ -16,7 +16,7 @@ import storage from './storage';
 
 import { baseApi } from './api/base.service';
 import userService from './api/user.service';
-import userSlice from './slice/user.slice';
+import userSlice from './slices/user.slice';
 
 const rootReducer = combineReducers({
   [baseApi.reducerPath]: baseApi.reducer,

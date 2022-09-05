@@ -1,7 +1,7 @@
 import { Flex, Button } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
-import { CTASection, SomeImage, SomeText } from 'lib/components/samples';
+import { CTASection, SomeImage, SomeText } from './samples';
 
 const Home = () => {
   return (

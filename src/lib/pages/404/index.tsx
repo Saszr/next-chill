@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react';
 import Link from 'next/link';
 
-import MotionBox from 'lib/components/motion/Box';
+import MotionBox from 'lib/components/MotionBox';
 
 const Page404 = () => {
   const { colorMode } = useColorMode();
@@ -41,7 +41,11 @@ const Page404 = () => {
             It&apos;s Okay!
           </Text>
           <Link href="/" passHref>
-            <Button backgroundColor={colorMode === 'light' ? 'gray.300' : 'teal.500'} size="sm">
+            <Button
+              backgroundColor={colorMode === 'light' ? 'gray.300' : 'teal.500'}
+              size="sm"
+              marginTop={4}
+            >
               Let&apos;s Head Back
             </Button>
           </Link>

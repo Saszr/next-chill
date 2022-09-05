@@ -1,3 +1,7 @@
 import Home from 'lib/pages/Home';
+import { DefaultLayout } from 'lib/layouts';
 
-export default Home;
+const Index = () => <Home />;
+Index.layout = DefaultLayout;
+
+export default Index;
