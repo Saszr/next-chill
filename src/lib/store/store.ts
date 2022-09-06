@@ -17,10 +17,12 @@ import storage from './storage';
 import { baseApi } from './api/base.service';
 import userService from './api/user.service';
 import userSlice from './slices/user.slice';
+import web3Slice from './slices/web3.slice';
 
 const rootReducer = combineReducers({
   [baseApi.reducerPath]: baseApi.reducer,
   user: userSlice,
+  web3: web3Slice,
 });
 
 const persistConfig = {
@@ -35,7 +37,8 @@ const middlewareHandler = (getDefaultMiddleware: any) => {
   const middlewareList = [
     ...getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER, 'web3/setWeb3Provider'],
+        ignoredPaths: ['web3.provider', 'web3.web3Provider'],
       },
     }),
 
