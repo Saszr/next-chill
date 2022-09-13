@@ -23,7 +23,7 @@ const Page404 = () => {
         width={{ base: '100%', sm: '70%', md: '60%' }}
         margin="0 auto"
       >
-        <Image src="/404 Error-pana.svg" alt="Error 404 not found Illustration" />
+        <Image src="/images/404 Error-pana.svg" alt="Error 404 not found Illustration" />
       </MotionBox>
       <Text textAlign="center" fontSize="xs" color="gray">
         <ChakraLink href="https://stories.freepik.com/web" isExternal rel="noopener noreferrer">
