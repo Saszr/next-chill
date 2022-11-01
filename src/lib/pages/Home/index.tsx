@@ -1,5 +1,4 @@
-import { Flex, Button } from '@chakra-ui/react';
-import NextLink from 'next/link';
+import { Flex } from '@chakra-ui/react';
 
 import { CTASection, SomeImage, SomeText } from './samples';
 
@@ -17,10 +16,6 @@ const Home = () => {
       <SomeText />
       <SomeImage />
       <CTASection />
-
-      <NextLink href="/example" passHref>
-        <Button size="sm">RTK Example</Button>
-      </NextLink>
     </Flex>
   );
 };
