@@ -1,21 +1,24 @@
-import { Flex, Button, Box } from '@chakra-ui/react';
-import NextLink from 'next/link';
+import { Flex, Text } from '@chakra-ui/react';
 
-import UserTable from './UserTable';
-import LoginForm from './LoginForm';
+import { useGetUserListQuery } from 'lib/store/api/example.service';
 
 const Example = () => {
+  const { data: UserList } = useGetUserListQuery();
+
   return (
-    <Flex direction="column" alignItems="center" minHeight="70vh" gap={4} mb={8} w="full">
-      <NextLink href="/" passHref>
-        <Button size="sm"> Let&apos;s Head Back</Button>
-      </NextLink>
-
-      <LoginForm />
-
-      <Box mt={10}>
-        <UserTable />
-      </Box>
+    <Flex
+      direction="column"
+      alignItems="center"
+      justifyContent="center"
+      minHeight="70vh"
+      gap={4}
+      mb={8}
+      w="full"
+    >
+      {UserList &&
+        UserList.map((user) => {
+          return <Text key={user._id}>{user.email}</Text>;
+        })}
     </Flex>
   );
 };

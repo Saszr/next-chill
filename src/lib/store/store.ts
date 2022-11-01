@@ -14,19 +14,18 @@ import { setupListeners } from '@reduxjs/toolkit/dist/query/react';
 
 import storage from './storage';
 
-import { baseApi } from './api/base.service';
-import userService from './api/user.service';
 import userSlice from './slices/user.slice';
+import hackerNewsService from './api/example.service';
 
 const rootReducer = combineReducers({
-  [baseApi.reducerPath]: baseApi.reducer,
+  [hackerNewsService.reducerPath]: hackerNewsService.reducer,
   user: userSlice,
 });
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['user'],
+  whitelist: [],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -40,7 +39,7 @@ const middlewareHandler = (getDefaultMiddleware: any) => {
     }),
 
     // service middleware
-    userService.middleware,
+    hackerNewsService.middleware,
   ];
   // if (process.env.NODE_ENV === 'development') {
   //   middlewareList.push(logger);
