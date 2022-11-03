@@ -1,7 +1,7 @@
 import Home from 'lib/pages/Home';
-import { DefaultLayout } from 'lib/layouts';
+import { Web3Layout } from 'lib/layouts';
 
 const Index = () => <Home />;
-Index.layout = DefaultLayout;
+Index.layout = Web3Layout;
 
 export default Index;
