@@ -1,10 +1,8 @@
-import { Flex, Text } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 
-import { useGetUserListQuery } from 'lib/store/api/example.service';
+import { RTKQuery } from './sections';
 
 const Example = () => {
-  const { data: UserList } = useGetUserListQuery();
-
   return (
     <Flex
       direction="column"
@@ -15,10 +13,7 @@ const Example = () => {
       mb={8}
       w="full"
     >
-      {UserList &&
-        UserList.map((user) => {
-          return <Text key={user._id}>{user.email}</Text>;
-        })}
+      <RTKQuery />
     </Flex>
   );
 };

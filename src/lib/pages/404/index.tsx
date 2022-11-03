@@ -1,56 +1,30 @@
-import {
-  Box,
-  Button,
-  Heading,
-  Image,
-  Text,
-  Link as ChakraLink,
-  useColorMode,
-  Flex,
-} from '@chakra-ui/react';
+import { Heading, Image, Flex, Link as ChakraLink } from '@chakra-ui/react';
 import Link from 'next/link';
 
 import MotionBox from 'lib/components/MotionBox';
 
 const Page404 = () => {
-  const { colorMode } = useColorMode();
-
   return (
     <Flex minHeight="70vh" direction="column" justifyContent="center">
       <MotionBox
         animate={{ y: 20 }}
         transition={{ repeat: Infinity, duration: 2, repeatType: 'reverse' }}
-        width={{ base: '100%', sm: '70%', md: '60%' }}
+        w="100%"
+        maxW="900px"
         margin="0 auto"
       >
         <Image src="/images/404 Error-pana.svg" alt="Error 404 not found Illustration" />
       </MotionBox>
-      <Text textAlign="center" fontSize="xs" color="gray">
-        <ChakraLink href="https://stories.freepik.com/web" isExternal rel="noopener noreferrer">
-          Illustration by Freepik Stories
-        </ChakraLink>
-      </Text>
 
-      <Box marginY={4}>
-        <Heading textAlign="center" size="lg">
-          Page not Found.
-        </Heading>
+      <Flex direction={'column'} justifyContent={'center'} alignItems={'center'} gap={4}>
+        <Heading size="lg">Page not Found.</Heading>
 
-        <Box textAlign="center" marginTop={4}>
-          <Text fontSize="sm" color="gray">
-            It&apos;s Okay!
-          </Text>
-          <Link href="/" passHref>
-            <Button
-              backgroundColor={colorMode === 'light' ? 'gray.300' : 'teal.500'}
-              size="sm"
-              marginTop={4}
-            >
-              Let&apos;s Head Back
-            </Button>
-          </Link>
-        </Box>
-      </Box>
+        <Link href="/" passHref>
+          <ChakraLink isExternal rel="noopener noreferrer" color="gray">
+            Let's Head Back
+          </ChakraLink>
+        </Link>
+      </Flex>
     </Flex>
   );
 };
