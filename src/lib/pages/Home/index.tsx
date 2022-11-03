@@ -1,5 +1,6 @@
 import { Flex } from '@chakra-ui/react';
 
+import InViewRevealBox from 'lib/components/InViewRevealBox';
 import { CTASection, SomeImage, SomeText } from './samples';
 
 const Home = () => {
@@ -13,9 +14,17 @@ const Home = () => {
       mb={8}
       w="full"
     >
-      <SomeText />
-      <SomeImage />
-      <CTASection />
+      <InViewRevealBox>
+        <SomeText />
+      </InViewRevealBox>
+
+      <InViewRevealBox>
+        <SomeImage />
+      </InViewRevealBox>
+
+      <InViewRevealBox>
+        <CTASection />
+      </InViewRevealBox>
     </Flex>
   );
 };
