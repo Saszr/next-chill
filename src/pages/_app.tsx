@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Fragment } from 'react';
+import { Global } from '@emotion/react';
 
 import { Chakra } from 'lib/containers/Chakra';
 import { rootStore, persistor } from 'lib/store';
@@ -21,6 +22,14 @@ const MyApp = ({ Component, pageProps }: NextAppProps) => {
               content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
             />
           </Head>
+          <Global
+            styles={`
+            @font-face {
+              font-family: 'Monocraft';
+              src: url('/fonts/Monocraft.otf');
+            };
+          `}
+          />
           <Layout>{getLayout(<Component {...pageProps} />)}</Layout>
         </PersistGate>
       </Provider>
