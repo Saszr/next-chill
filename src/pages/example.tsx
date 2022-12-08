@@ -1,7 +1,18 @@
-import Example from 'lib/pages/Example';
-import { DefaultLayout } from 'lib/layouts';
+import Head from 'next/head';
 
-const Index = () => <Example />;
+import { DefaultLayout } from 'lib/layouts';
+import Example from 'lib/pages/Example';
+
+const Index = () => {
+  return (
+    <>
+      <Head>
+        <title>Chill - Example</title>
+      </Head>
+      <Example />
+    </>
+  );
+};
 Index.layout = DefaultLayout;
 
 export default Index;
