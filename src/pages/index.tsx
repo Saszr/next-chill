@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
-import Home from 'lib/pages/Home';
 import { Web3Layout } from 'lib/layouts';
+import Home from 'lib/pages/Home';
 
 const Index = () => {
   return (

@@ -1,17 +1,8 @@
 import { Box, Flex, Heading, Link, Text } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
+import { useAccount } from 'wagmi';
 
-import { useAccount } from '@web3modal/react';
-
-import {
-  UseAccount,
-  UseDisconnect,
-  UseNetwork,
-  UseSwitchNetwork,
-  UseBlockNumber,
-  UseFeeData,
-  UseBalance,
-} from './sections';
+import { UseAccount, UseNetwork, UseBalance } from './sections';
 
 const More = () => {
   return (
@@ -34,7 +25,7 @@ const More = () => {
 };
 
 export default function Web3() {
-  const { account } = useAccount();
+  const account = useAccount();
 
   return (
     <Flex
@@ -48,11 +39,7 @@ export default function Web3() {
       {account.isConnected ? (
         <Flex direction="column" maxW="900px" w="full" gap={4} px={6}>
           <UseAccount />
-          <UseDisconnect />
           <UseNetwork />
-          <UseSwitchNetwork />
-          <UseBlockNumber />
-          <UseFeeData />
           <UseBalance />
           <More />
         </Flex>
@@ -66,21 +53,15 @@ export default function Web3() {
           wrap={'wrap'}
           px={6}
         >
-          <Box flex={1}>
-            <Heading
-              backgroundImage="linear-gradient(120deg, red, blue)"
-              color="transparent"
-              sx={{
-                WebkitBackgroundClip: 'text',
-              }}
-            >
-              @web3modal
-            </Heading>
-          </Box>
-
-          <video autoPlay loop muted style={{ width: '600px', flex: 1 }}>
-            <source src="https://web3modal.com/web3modal.mp4" type="video/mp4" />
-          </video>
+          <Heading
+            backgroundImage="linear-gradient(120deg, red, blue)"
+            color="transparent"
+            sx={{
+              WebkitBackgroundClip: 'text',
+            }}
+          >
+            @web3modal + wagmi
+          </Heading>
         </Flex>
       )}
     </Flex>

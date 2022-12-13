@@ -1,12 +1,12 @@
 import { Button, Text } from '@chakra-ui/react';
-import { useAccount, useBalance } from '@web3modal/react';
+import { useAccount, useBalance } from 'wagmi';
 
 import Card from 'lib/containers/Card';
 
 const UseBalance = () => {
-  const { account } = useAccount();
+  const account = useAccount();
   const { data, error, isLoading, refetch } = useBalance({
-    addressOrName: account.address,
+    address: account.address,
   });
 
   return (
